@@ -3,19 +3,20 @@
 		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "shopping"
+				"navigationBarTitleText": "乐易购"
 			}
 		},
 		{
 			"path": "pages/buy/buy",
 			"style": {
-				"navigationBarTitleText": "shopping"
+				"navigationBarTitleText": "乐易购"
 			}
 		},
 		{
 			"path": "pages/info/info",
 			"style": {
-				"navigationBarTitleText": "shopping"
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
 			}
 		}
 	],
@@ -40,7 +41,7 @@
 				"pagePath": "pages/buy/buy",
 				"iconPath": "static/icon_buy.png",
 				"selectedIconPath": "static/icon_buy_cur.png",
-				"text": "购物"
+				"text": "分类"
 			}, {
 				"pagePath": "pages/info/info",
 				"iconPath": "static/icon_info.png",
