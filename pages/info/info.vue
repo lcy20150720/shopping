@@ -22,24 +22,34 @@
 		</view>
 		<view class="list">
 			<view class="row">
-				<image class="icon" src="../../static/c1.png" mode=""></image>
-				<text class="lf-txt">我的收藏</text>
+				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+                    <image class="icon" src="../../static/c1.png" mode=""></image>
+                    <text class="lf-txt">我的收藏</text>
+                </navigator>
 			</view>
 			<view class="row">
-				<image class="icon" src="../../static/c2.png" mode=""></image>
-				<text class="lf-txt">收货地址</text>
+				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+					<image class="icon" src="../../static/c2.png" mode=""></image>
+					<text class="lf-txt">收货地址</text>
+				</navigator>
 			</view>
 			<view class="row">
-				<image class="icon" src="../../static/c3.png" mode=""></image>
-				<text class="lf-txt">帮助中心</text>
+				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+					<image class="icon" src="../../static/c3.png" mode=""></image>
+					<text class="lf-txt">帮助中心</text>
+				</navigator>
 			</view>
 			<view class="row">
-				<image class="icon" src="../../static/c4.png" mode=""></image>
-				<text class="lf-txt">关于我们</text>
+				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+					<image class="icon" src="../../static/c4.png" mode=""></image>
+					<text class="lf-txt">关于我们</text>
+				</navigator>
 			</view>
 			<view class="row">
-				<image class="icon" src="../../static/c5.png" mode=""></image>
-				<text class="lf-txt">意见反馈</text>
+				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+					<image class="icon" src="../../static/c5.png" mode=""></image>
+					<text class="lf-txt">意见反馈</text>
+				</navigator>
 			</view>
 		</view>
 	</view>
@@ -50,8 +60,8 @@
 		data() {
 			return {
 				userData:{
-					avatar:'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg',
-					nickname:'Vivi'
+					avatar:require('../../static/head_01.jpg'),
+					nickname:'Amilly'
 				}
 			}
 		},
@@ -67,6 +77,10 @@
 </script>
 
 <style>
+.page-wrap{
+	height: calc( 100vh - 100rpx );
+	background-color: #f5f5f5;
+}
 .info-top{
 	padding-top: 80rpx;
 	padding-bottom: 160rpx;
@@ -77,7 +91,7 @@
 	position: relative;
 	background: url('~@/static/bg.jpg');
 	position: relative;
-	z-index: -1;
+	z-index: 5;
 }
 .info-top-wp{
 	position: relative;
@@ -89,7 +103,7 @@
 	border: 6rpx solid #fff;
 }
 .info-top .nick-name{
-	color: #333;
+	color: #fff;
 	font-size: 32rpx;
 	margin-left: 40rpx;
 	position: absolute;
@@ -100,7 +114,6 @@
 	line-height: 48rpx;
 	padding-left: 20rpx;
 	padding-right: 20rpx;
-	background-color: rgba(255,255,255,.6);
 }
 .info-top .avatar,.info-top .nick-name{
 	display: inline-block;
@@ -112,10 +125,12 @@
 	background-color: #FFFFFF;
 	margin: -100rpx auto 0 auto;
 	display: flex;
-	border-radius: 40rpx;
+	border-radius: 20rpx;
 	box-shadow: 0 2rpx 2rpx 2rpx #ddd;
 	padding-top: 24rpx;
 	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
 }
 .tab-top .col{
 	width: 33.3%;
@@ -137,8 +152,6 @@
 	display: block;
 }
 .list{
-	padding-left: 40rpx;
-	padding-right: 40rpx;
 	padding-top: 40rpx;
 }
 .list .row{
@@ -146,6 +159,11 @@
 	line-height: 100rpx;
 	background-color: #fff;
 	border-bottom: 2rpx solid #ddd;
+	padding-left: 40rpx;
+	padding-right: 40rpx;
+}
+.list .row:last-child{
+	border-bottom: none;
 }
 .list .row .icon{
 	width: 60rpx;

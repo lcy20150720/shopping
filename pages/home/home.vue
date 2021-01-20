@@ -1,7 +1,7 @@
 <template>
 	<view class="content">
-		<uni-swiper-dot :info="info" :current="current" field="content" :mode="mode">
-			<swiper class="swiper-box" @change="change">
+		<uni-swiper-dot :info="info" :current="current" field="content" :mode="mode" :dotsStyles="dotsStyles">
+			<swiper class="swiper-box" :autoplay="autoplay" :interval="interval" :duration="duration">
 				<swiper-item v-for="(item ,index) in info" :key="index">
 					<view class="swiper-item">
 						 <image style="width: 100%;height: 300rpx;" :mode="item.mode" :src="item.src"></image>
@@ -47,60 +47,24 @@
 		<view class="hot">
 			<text class="hot-tp-txt">限时秒杀</text>
 			<view class="items-wrap">
-				<view class="item">
-					<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-					<text class="price">￥500</text>
-					<button type="primary" class="booking-btn">加入购物车</button>
-				</view>
-				<view class="item">
-					<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-					<text class="price">￥500</text>
-					<button type="primary" class="booking-btn">加入购物车</button>
-				</view>
-				<view class="item">
-					<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-					<text class="price">￥500</text>
+				<view class="item" v-for="(item, index) in hotList" :key="index">
+					<image class="goods-img" :src="item.src" :mode="item.mode"></image>
+					<text class="price">￥{{item.price}}</text>
 					<button type="primary" class="booking-btn">加入购物车</button>
 				</view>
 			</view>
 		</view>
 		
 		<view class="list">
-			<view class="row">
+			<view class="row" v-for="(item, index) in showList" :key="index">
 				<view class="lf-img">
-					<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
+					<image class="goods-img" :src="item.src" :mode="item.mode"></image>
 				</view>
 				<view class="rg-txt">
-					<text class="goods-txt">测试文测试文字字测试文字测试文测试文字字测试文字</text>
+					<text class="goods-txt">{{item.text}}</text>
 					<view class="bom-txt">
 						<text class="price-unit">￥</text>
-						<text class="price">999</text>
-						<button type="primary" class="booking-btn">立即抢购</button>
-					</view>
-				</view>
-			</view>
-			<view class="row">
-				<view class="lf-img">
-					<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-				</view>
-				<view class="rg-txt">
-					<text class="goods-txt">测试文测试文字字测试文字测试文测试文字字测试文字</text>
-					<view class="bom-txt">
-						<text class="price-unit">￥</text>
-						<text class="price">999</text>
-						<button type="primary" class="booking-btn">立即抢购</button>
-					</view>
-				</view>
-			</view>
-			<view class="row">
-				<view class="lf-img">
-					<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-				</view>
-				<view class="rg-txt">
-					<text class="goods-txt">测试文测试文字字测试文字测试文测试文字字测试文字</text>
-					<view class="bom-txt">
-						<text class="price-unit">￥</text>
-						<text class="price">999</text>
+						<text class="price">{{item.price}}</text>
 						<button type="primary" class="booking-btn">立即抢购</button>
 					</view>
 				</view>
@@ -114,18 +78,64 @@ import uniSwiperDot from "@/components/uni-swiper-dot/uni-swiper-dot.vue"
 export default {
     data() {
         return {
+			autoplay: true,
+			interval: 5000,
+			duration: 500,
             info: [{
                 mode: 'scaleToFill',
-				src: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg'
+				src: require('../../static/banner_01.jpg'),
             }, {
                 mode: 'scaleToFill',
-                src: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg'
+                src:  require('../../static/banner_02.jpg'),
             }, {
                 mode: 'scaleToFill',
-                src: 'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg'
+                src:  require('../../static/banner_03.jpg'),
             }],
             current: 0,
             mode: 'round',
+			dotsStyles: {
+				backgroundColor: 'rgba(255,255,255,.5)',
+				selectedBackgroundColor: '#fff',
+				border: '1px solid rgba(255,255,255,.5)',
+				selectedBorder: '1px solid rgba(255,255,255,1)',
+			},
+			hotList: [
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g1.jpg'),
+					price:'5.9',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g2.jpg'),
+					price:'2.3',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g3.jpg'),
+					price:'4.5',
+				}
+			],
+			showList: [
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/h1.jpg'),
+					text:'新鲜江西红橙大优惠新鲜上市包邮大家',
+					price:'5.9',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/h2.jpg'),
+					text:'浓郁百香果缤纷的世界新鲜发货送开果器',
+					price:'2.3',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/h3.jpg'),
+					text:'红苹果包邮到家健康你我他每天一苹果',
+					price:'4.5',
+				}
+			],
         }
     },
 	components: {uniSwiperDot},
@@ -167,7 +177,7 @@ export default {
 	.hot{
 		width: 700rpx;
 		height: 340rpx;
-		background-color: #FF5722;
+		background: url('~@/static/hot.jpg');
 		border-radius: 20rpx;
 		margin: 20rpx auto 0 auto;
 		padding: 20rpx;

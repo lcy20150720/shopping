@@ -3,13 +3,13 @@
 		{
 			"path": "pages/home/home",
 			"style": {
-				"navigationBarTitleText": "乐易购"
+				"navigationBarTitleText": "生鲜易购"
 			}
 		},
 		{
 			"path": "pages/buy/buy",
 			"style": {
-				"navigationBarTitleText": "乐易购"
+				"navigationBarTitleText": "生鲜易购"
 			}
 		},
 		{
@@ -19,18 +19,34 @@
 				"navigationStyle": "custom"
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/cart/cart",
+            "style" : {
+				"navigationBarTitleText": "生鲜易购"
+			}
+        },
+		 {
+		    "path" : "pages/collect/collect",
+		    "style" : {
+				"navigationBarTitleText": "生鲜易购"
+			}
+		}
+        ,{
+            "path" : "pages/collect/collect",
+            "style" : {}
+        }
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "333",
-		"navigationBarBackgroundColor": "#333333",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarBackgroundColor": "#e32227",
+		"backgroundColor": "#eee"
 	},
 	"tabBar": {
 		"color": "#eee",
-		"selectedColor": "#e9b461",
+		"selectedColor": "#ead625",
 		"borderStyle": "black",
-		"backgroundColor": "#333",
+		"backgroundColor": "#e32227",
 		"list": [{
 				"pagePath": "pages/home/home",
 				"iconPath": "static/icon_home.png",
@@ -43,6 +59,12 @@
 				"selectedIconPath": "static/icon_buy_cur.png",
 				"text": "分类"
 			}, {
+				"pagePath": "pages/cart/cart",
+				"iconPath": "static/icon_cart.png",
+				"selectedIconPath": "static/icon_cart_cur.png",
+				"text": "购物车"
+			},
+			 {
 				"pagePath": "pages/info/info",
 				"iconPath": "static/icon_info.png",
 				"selectedIconPath": "static/icon_info_cur.png",

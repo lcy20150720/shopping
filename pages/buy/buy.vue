@@ -1,13 +1,5 @@
 <template>
 	<view>
-		<uni-fab 
-            :pattern="pattern"
-            :content="content"
-            :horizontal="horizontal"
-            :vertical="vertical"
-            :direction="direction"
-            @trigger="trigger"
-        ></uni-fab>
 		<view class="types-all">
 			<view class="type-btns">
 				<text class="type-lf-txt top-title">分类</text>
@@ -23,30 +15,13 @@
 			</view>
 			<view class="type-panel">
 				<view class="panel">
-					<view class="box">
-						<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-						<text class="goods-txt">测试标题测试标题测试标题测试标题</text>
-						<view class="price-wp"><text class="goods-price-txt">￥</text><text class="goods-price">999</text></view>
+					<view class="box" v-for="(item, index) in showList" :key="index">
+						<image class="goods-img" :src="item.src" :mode="item.mode"></image>
+						<text class="goods-txt">{{item.text}}</text>
+						<view class="price-wp"><text class="goods-price-txt">￥</text><text class="goods-price">{{item.price}}</text></view>
 						<button type="primary" class="booking-btn">购买</button>
 					</view>
-					<view class="box">
-						<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-						<text class="goods-txt">测试标题测试标题测试标题测试标题</text>
-						<view class="price-wp"><text class="goods-price-txt">￥</text><text class="goods-price">999</text></view>
-						<button type="primary" class="booking-btn">购买</button>
-					</view>
-					<view class="box">
-						<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-						<text class="goods-txt">测试标题测试标题测试标题测试标题</text>
-						<view class="price-wp"><text class="goods-price-txt">￥</text><text class="goods-price">999</text></view>
-						<button type="primary" class="booking-btn">购买</button>
-					</view>
-					<view class="box">
-						<image class="goods-img" src="https://vkceyugu.cdn.bspapp.com/VKCEYUGU-uni-app-doc/6acec660-4f31-11eb-a16f-5b3e54966275.jpg" mode=""></image>
-						<text class="goods-txt">测试标题测试标题测试标题测试标题</text>
-						<view class="price-wp"><text class="goods-price-txt">￥</text><text class="goods-price">999</text></view>
-						<button type="primary" class="booking-btn">购买</button>
-					</view>
+					
 				</view>
 			</view>
 		</view>
@@ -54,62 +29,40 @@
 </template>
 
 <script>
-	
-import uniFab from '@/components/uni-fab/uni-fab.vue';
 export default {
     data() {
         return {
-            horizontal: 'right',
-            vertical: 'bottom',
-            direction: 'horizontal',
-            pattern: {
-                color: '#666',
-                backgroundColor: '#fff',
-                selectedColor: '#333',
-                buttonColor:"#333"
-            },
-            content: [
-                {
-                    iconPath: 'static/icon_heart.png',
-                    selectedIconPath: '',
-                    text: '收藏',
-                    active: false
-                },
-                {
-                    iconPath: 'static/icon_shop.png',
-                    selectedIconPath: '',
-                    text: '购买',
-                    active: false
-                },
-                {
-                    iconPath: 'static/icon_hand.png',
-                    selectedIconPath: '',
-                    text: '推荐',
-                    active: false
-                }
-            ]
+			showList: [
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g1.jpg'),
+					text:'新鲜柠檬大优惠新鲜上市包邮到家',
+					price:'5.9',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g2.jpg'),
+					text:'红彤彤西红柿缤纷的世界新鲜发货',
+					price:'2.3',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g3.jpg'),
+					text:'香郁草莓包邮到家香飘四溢健康你我他',
+					price:'4.5',
+				},
+				{
+					mode: 'scaleToFill',
+					src: require('../../static/g3.jpg'),
+					text:'香郁草莓包邮到家香飘四溢健康你我他',
+					price:'4.5',
+				}
+			],
         };
     },
     methods: {
-        trigger(e) {
-            console.log(e);
-            this.content[e.index].active = !e.item.active;
-            uni.showModal({
-                title: '提示',
-                content: `您${this.content[e.index].active?'选中了':'取消了'}${e.item.text}`,
-                success: function(res) {
-                    if (res.confirm) {
-                        console.log('用户点击确定');
-                    } else if (res.cancel) {
-                        console.log('用户点击取消');
-                    }
-                }
-            });
-        }
+       
     },
-    components: {
-        uniFab
-    }
 };
 </script>
 
@@ -126,7 +79,9 @@ export default {
 	left: 0;
 	top: 0;
 	bottom: 0;
-	background-color: #f5f5f5;
+	background-color: #fff;
+	border-right: 1px solid #eee;
+	z-index: 999;
 }
 .type-panel{
 	width: 100%;
@@ -138,6 +93,7 @@ export default {
 	position: fixed;
 	bottom: 0;
 	top: 88rpx;
+	background-color: #F5F5F5;
 }
 .type-lf-txt{
 	width: 100%;
@@ -147,7 +103,7 @@ export default {
 	font-size: 32rpx;
 	color: #333;
 	display:block;	
-	border-bottom: 2rpx solid #ddd;
+	border-bottom: 2rpx solid #eee;
 }
 .top-title{
 	font-weight: bold;
