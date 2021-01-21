@@ -56,10 +56,10 @@
 		background-color: #F5F5F5;
 	}
 	.list{
-		padding-left: 30rpx;
-		padding-right: 30rpx;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
 		box-sizing: border-box;
-		padding-top: 40rpx;
+		padding-top: 20rpx;
 	}
 	.list .row{
 		width: 100%;
@@ -67,9 +67,10 @@
 		display: flex;
 		margin-bottom: 30rpx;
 		background-color: #FFFFFF;
-		padding: 10rpx;
+		padding: 20rpx;
 		box-sizing: border-box;
 		border-radius: 10rpx;
+		box-shadow: 0 2rpx 2rpx 2rpx #eee;
 	}
 	.list .row .lf-img{
 		width: 35%;
@@ -87,7 +88,7 @@
 		box-sizing: border-box;
 	}
 	.list .goods-txt{
-		height: 120rpx;
+		height: 110rpx;
 		color: #333;
 		font-weight: bold;
 		font-size: 32rpx;

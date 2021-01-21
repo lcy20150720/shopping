@@ -28,25 +28,25 @@
                 </navigator>
 			</view>
 			<view class="row">
-				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+				<navigator url="../../pages/address/address" hover-class="navigator-hover">
 					<image class="icon" src="../../static/c2.png" mode=""></image>
 					<text class="lf-txt">收货地址</text>
 				</navigator>
 			</view>
 			<view class="row">
-				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+				<navigator url="../../pages/help/help" hover-class="navigator-hover">
 					<image class="icon" src="../../static/c3.png" mode=""></image>
 					<text class="lf-txt">帮助中心</text>
 				</navigator>
 			</view>
 			<view class="row">
-				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+				<navigator url="../../pages/about/about" hover-class="navigator-hover">
 					<image class="icon" src="../../static/c4.png" mode=""></image>
 					<text class="lf-txt">关于我们</text>
 				</navigator>
 			</view>
 			<view class="row">
-				<navigator url="../../pages/collect/collect" hover-class="navigator-hover">
+				<navigator url="../../pages/suggest/suggest" hover-class="navigator-hover">
 					<image class="icon" src="../../static/c5.png" mode=""></image>
 					<text class="lf-txt">意见反馈</text>
 				</navigator>
