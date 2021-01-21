@@ -31,7 +31,7 @@
 			   </view>
 			</view>
 			<view class="total-right">
-				 <navigator url="../../pages/collect/collect" open-type="redirect" hover-class="other-navigator-hover">
+				 <navigator url="../../pages/order/order" hover-class="other-navigator-hover">
                     <button type="default" class="pay-btn">去下单</button>
                 </navigator>
 			</view>

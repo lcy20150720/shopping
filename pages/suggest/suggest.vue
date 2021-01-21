@@ -80,6 +80,8 @@
 	width: 100%;
 	height: 200rpx;
 	border-radius: 10rpx;
+	text-indent: 16rpx;
+	font-size: 28rpx;
 }
 .submit-panel{
 	width: 100%;

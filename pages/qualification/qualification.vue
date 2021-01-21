@@ -19,10 +19,7 @@
 						src: require('../../static/y1.jpg'),
 						mode: 'scaleToFill',
 					},
-					{
-						src: require('../../static/y1.jpg'),
-						mode: 'scaleToFill',
-					},
+					
 				]
 			}
 		},

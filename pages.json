@@ -68,6 +68,18 @@
 				"navigationBarTitleText": "隐私政策"
 			}
         }
+        ,{
+            "path" : "pages/order/order",
+            "style" : {
+				"navigationBarTitleText": "确认订单"
+			}
+        }
+        ,{
+            "path" : "pages/status/status",
+            "style" : {
+				"navigationBarTitleText": "订单状态"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
