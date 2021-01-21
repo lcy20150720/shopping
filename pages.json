@@ -88,8 +88,8 @@
 			},
 			{
 				"pagePath": "pages/buy/buy",
-				"iconPath": "static/icon_buy.png",
-				"selectedIconPath": "static/icon_buy_cur.png",
+				"iconPath": "static/icon_sort.png",
+				"selectedIconPath": "static/icon_sort_cur.png",
 				"text": "分类"
 			}, {
 				"pagePath": "pages/cart/cart",

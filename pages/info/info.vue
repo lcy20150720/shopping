@@ -8,16 +8,22 @@
 		</view>
 		<view class="tab-top">
 			<view class="col">
-				<image class="icon" src="../../static/i01.png" mode=""></image>
-				<text class="bm-txt">余额</text>
+				<view class="icon">
+					<image class="icon-img" src="../../static/d01.png" mode=""></image>
+				</view>
+				<text class="bm-txt">待付款</text>
 			</view>
 			<view class="col">
-				<image class="icon" src="../../static/i02.png" mode=""></image>
-				<text class="bm-txt">积分</text>
+				<view class="icon">
+					<image class="icon-img" src="../../static/d02.png" mode=""></image>
+				</view>
+				<text class="bm-txt">待发货</text>
 			</view>
 			<view class="col">
-				<image class="icon" src="../../static/i03.png" mode=""></image>
-				<text class="bm-txt">等级</text>
+				<view class="icon">
+					<image class="icon-img" src="../../static/d03.png" mode=""></image>
+				</view>
+				<text class="bm-txt">待收货</text>
 			</view>
 		</view>
 		<view class="list">
@@ -79,7 +85,6 @@
 <style>
 .page-wrap{
 	height: calc( 100vh - 100rpx );
-	background-color: #f5f5f5;
 }
 .info-top{
 	padding-top: 80rpx;
@@ -143,6 +148,22 @@
 	display: block;
 	border-radius: 50%;
 	margin: 0 auto;
+	padding: 20rpx;
+	box-sizing: border-box;
+}
+.tab-top .col .icon-img{
+	width: 100%;
+	height: 100%;
+}
+.tab-top .col:nth-child(1) .icon{
+	background-color: #FF5722;
+}
+.tab-top .col:nth-child(2) .icon{
+	background-color: #775cff;
+	padding: 24rpx;
+}
+.tab-top .col:nth-child(3) .icon{
+	background-color: #1698f9;
 }
 .tab-top .bm-txt{
 	text-align: center;
