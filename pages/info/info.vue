@@ -8,7 +8,7 @@
 		</view>
 		<view class="tab-top">
 			<view class="col">
-				<navigator url="../../pages/status/status" hover-class="navigator-hover">
+				<navigator url="../../pages/status/status?tabIndex=0" hover-class="navigator-hover">
 					<view class="icon">
 						<image class="icon-img" src="../../static/d01.png" mode=""></image>
 					</view>
@@ -16,16 +16,20 @@
 				</navigator>
 			</view>
 			<view class="col">
-				<view class="icon">
-					<image class="icon-img" src="../../static/d02.png" mode=""></image>
-				</view>
-				<text class="bm-txt">待发货</text>
+				<navigator url="../../pages/status/status?tabIndex=1" hover-class="navigator-hover">
+					<view class="icon">
+						<image class="icon-img" src="../../static/d02.png" mode=""></image>
+					</view>
+					<text class="bm-txt">待发货</text>
+				</navigator>
 			</view>
 			<view class="col">
-				<view class="icon">
-					<image class="icon-img" src="../../static/d03.png" mode=""></image>
-				</view>
-				<text class="bm-txt">待收货</text>
+				<navigator url="../../pages/status/status?tabIndex=2" hover-class="navigator-hover">
+					<view class="icon">
+						<image class="icon-img" src="../../static/d03.png" mode=""></image>
+					</view>
+					<text class="bm-txt">待收货</text>
+				</navigator>
 			</view>
 		</view>
 		<view class="list">
