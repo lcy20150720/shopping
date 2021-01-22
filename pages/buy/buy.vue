@@ -4,13 +4,11 @@
 			<view class="type-btns">
 				<text class="type-lf-txt top-title">分类</text>
 				<view class="type-wp">
-					<text class="type-lf-txt">蔬菜</text>
-					<text class="type-lf-txt">水果</text>
-					<text class="type-lf-txt">肉禽</text>
-					<text class="type-lf-txt">海鲜</text>
-					<text class="type-lf-txt">粮油</text>
-					<text class="type-lf-txt">零食</text>
-					<text class="type-lf-txt">酒饮</text>
+					<text 
+					v-for="(item, index) in tabs" 
+					:class="{'type-lf-txt': true, 'cur' : active===index}" 
+					:key="index"
+					@click="tabChange(index)">{{tabs[index]}}</text>
 				</view>
 			</view>
 			<view class="type-panel">
@@ -21,7 +19,6 @@
 						<view class="price-wp"><text class="goods-price-txt">￥</text><text class="goods-price">{{item.price}}</text></view>
 						<button type="primary" class="booking-btn">购买</button>
 					</view>
-					
 				</view>
 			</view>
 		</view>
@@ -32,6 +29,7 @@
 export default {
     data() {
         return {
+			tabs:['蔬菜','水果','肉禽','海鲜','粮油','零食','酒饮'],
 			showList: [
 				{
 					mode: 'scaleToFill',
@@ -58,10 +56,13 @@ export default {
 					price:'4.5',
 				}
 			],
+			active: 0,
         };
     },
     methods: {
-       
+       tabChange: function(index){
+		   this.active = index;
+	   }
     },
 };
 </script>
@@ -100,13 +101,17 @@ export default {
 	height: 80rpx;
 	line-height: 80rpx;
 	text-align: center;
-	font-size: 32rpx;
+	font-size: 30rpx;
 	color: #333;
 	display:block;	
 	border-bottom: 2rpx solid #eee;
 }
+.cur{
+	color: #FF5722;
+}
 .top-title{
 	font-weight: bold;
+	font-size: 32rpx;
 }
 .box{
 	width: 48%;

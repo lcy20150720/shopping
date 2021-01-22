@@ -9,11 +9,13 @@
 					 <view class="bom-txt">
 						 <text class="unit">￥</text>
 						 <text class="price">{{item.price}}</text>
-						 <view class="count-box">
-							 <view class="add-btn">+</view>
-							 <input class="uni-input" placeholder="" value="0"/>
-							 <view class="del-btn">-</view>
-						 </view>
+						 <lxc-count 
+							@handleCount="handleCountClick(arguments)" 
+							:index="index" 
+							:value.sync="item.num"
+							:delayed="100"
+							>
+						</lxc-count>
 					 </view>
 				 </view>
 			</view>
@@ -40,6 +42,7 @@
 </template>
 
 <script>
+	import lxcCount from '@/components/lxc-count/lxc-count.vue'
 	export default {
 		data() {
 			return {
@@ -50,25 +53,35 @@
 						src: require('../../static/g1.jpg'),
 						text:'新鲜柠檬大优惠新鲜上市包邮到家',
 						price:'5.9',
+						num: 1,
 					},
 					{
 						mode: 'scaleToFill',
 						src: require('../../static/g2.jpg'),
 						text:'红彤彤西红柿缤纷的世界新鲜发货',
 						price:'2.3',
+						num: 0,
 					},
 					{
 						mode: 'scaleToFill',
 						src: require('../../static/g3.jpg'),
 						text:'香郁草莓包邮到家香飘四溢健康你我他',
 						price:'4.5',
+						num: 0,
 					},
 					
 				],
 			}
 		},
+		components:{
+			lxcCount
+		},
 		methods: {
-			
+			handleCountClick(msg) {
+				var val = msg[0];
+				var index = msg[1];
+				this.showList[index]['num'] = val;
+			}
 		}
 	}
 </script>
