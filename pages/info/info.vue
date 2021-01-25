@@ -189,9 +189,6 @@
 	padding-left: 40rpx;
 	padding-right: 40rpx;
 }
-.list .row:last-child{
-	border-bottom: none;
-}
 .list .row .icon{
 	width: 60rpx;
 	height: 60rpx;

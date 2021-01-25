@@ -80,6 +80,27 @@
 				"navigationBarTitleText": "订单状态"
 			}
         }
+        ,{
+            "path" : "pages/login/login",
+            "style" : {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/regist/regist",
+            "style" : {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+        }
+        ,{
+            "path" : "pages/forget/forget",
+            "style" : {
+				"navigationBarTitleText": "",
+				"navigationStyle": "custom"
+			}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
